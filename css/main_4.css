@@ -1,0 +1,60 @@
+#main_4 {
+
+}
+#main_4 .wrap {
+
+}
+#main_4 .wrap h2{
+  visibility: hidden;
+}
+#main_4 .wrap a.mainimg {
+
+}
+#main_4 .wrap a.mainimg img {
+  width: 100%;
+}
+#main_4 .wrap .imgtxt {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  justify-content: space-between;
+}
+#main_4 .wrap .imgtxt .txtbox{
+  
+}
+#main_4 .wrap .imgtxt .txtbox a {
+
+}
+#main_4 .wrap .imgtxt .txtbox a h3 {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+#main_4 .wrap .imgtxt .txtbox a h3::after{
+  content: "";
+  display: block;
+  width: 40px;
+  height: 16px;
+  margin-top: 8px;
+  background-color: #222;
+}
+#main_4 .wrap .imgtxt .txtbox a p {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding-top: 30px;
+}
+#main_4 .wrap ul.imgbox {
+  gap: 20px;
+}
+#main_4 .wrap ul.imgbox li {
+
+}
+#main_4 .wrap ul.imgbox li a {
+
+}
+#main_4 .wrap ul.imgbox li a img {
+  width: 220px;
+  height: 220px;
+}

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로스펙스 공식 온라인 스토어</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/main_1.css">
+    <link rel="stylesheet" href="css/main_2.css">
+    <link rel="stylesheet" href="css/main_3.css">
+    <link rel="stylesheet" href="css/main_4.css">
+    <link rel="stylesheet" href="css/main_5.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- 제이쿼리 -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <!-- 슬릭 -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <script src="slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.title_slick').slick({
+                autoplay: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplayspeed: 800,
+                prevArrow: $('.prev-btn'),
+                nextArrow: $('.next-btn')
+            });
+            $('.main2_slick').slick({
+                autoplay: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplayspeed: 800,
+                prevArrow: $('.prev-btn2'),
+                nextArrow: $('.next-btn2')
+            });
+            $('.main3_slick').slick({
+                autoplay: true,
+                infinite: false,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                autoplayspeed: 800,
+                variableWidth: true,
+            });
+
+            // 타이틀 아코디언 메뉴
+                // 1. 마우스 올리기 전까진 노출되지 않게 다 숨기기
+                $("header .wrap nav .wgnb").hide();
+                // 2. 마우스 올렸을 때 해당 메뉴 노출시키기
+                let n;
+                $("header .wrap nav .menu ul.gnb li").mouseenter(function(){
+                    n=$(this).index();
+                    $("header .wrap nav .wgnb:eq("+n+")").slideDown();
+                    $("header .wrap nav .wgnb").not(".wgnb:eq("+n+")").hide();
+                });
+                $("section#title").mouseenter(function(){
+                    $("header .wrap nav .wgnb:eq("+n+")").slideUp();
+                });
+                // 3. nav 에 마우스 올렸을 때 css 스타일 변경
+                $("header .wrap nav").mouseenter(function(){
+                    $(this).css("background-color","white");
+                    $("header .wrap nav .menu ul.gnb li a, header .wrap nav .menu .buy ul.customer li a").css("color","black");
+                    $("header .wrap nav .menu h1 a").css("background-image", 'url("img/logo_black.svg")');
+                    $("header .wrap nav .menu .buy ul.customer li a.search").css("background-image", 'url("img/icon_search_black.svg")');
+                    $("header .wrap nav .menu .buy ul.customer li a.cart").css("background-image", 'url("img/icon_cart_black.svg")');
+                });
+                $("header .wrap nav").mouseleave(function(){
+                    $(this).css("background-color","transparent");
+                    $("header .wrap nav .menu ul.gnb li a, header .wrap nav .menu .buy ul.customer li a").css("color","white");
+                    $("header .wrap nav .menu h1 a").css("background-image", 'url("img/logo_white.svg")');
+                    $("header .wrap nav .menu .buy ul.customer li a.search").css("background-image", 'url("img/icon_search_white.svg")');
+                    $("header .wrap nav .menu .buy ul.customer li a.cart").css("background-image", 'url("img/icon_cart_black.svg")');
+                });
+
+            // main3 리스트 아코디언 메뉴
+            // 1. 메뉴a만 나오고 나머지 다 hide 시키기
+            $(".pro-2, .pro-3, .pro-4").hide();
+            $("#main_3 .wrap .product div.pro-1 article").show();
+            // 2. 메뉴 클릭하면 해당 리스트 나오는 이벤트 설정하기
+            $("#main_3 .wrap ul li a").click(function(){
+                $(this).css({'color': 'black', "text-decoration": "underline", "text-decoration-thickness": "8px", "text-underline-offset": "20px"});
+                $("#main_3 .wrap .product > div:nth-child("+($(this).parent().index()+1)+")").show();
+                $("#main_3 .wrap .product > div ").not("div:nth-child("+($(this).parent().index()+1)+")").hide();
+                return false;
+            });
+            // 3. main_3 메뉴 클릭할 때 css 효과 주기
+            $("#main_3 .wrap ul li a").click(function(){
+                $(this).css({'color':'black','text-decoration':'underline','text-decoration-color':'#222','text-decoration-thickness':'8px','text-underline-offset':'20px'});
+                $("#main_3 .wrap ul li a").not(this).css({'font-size':'27px','font-weight':'700','color':'grey','text-decoration':'none'})
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header>
+        <div class="wrap">
+            <div class="top">
+                <a href="">신규가입 시 총 4만 9천원 쿠폰팩 증정</a>
+            </div>
+            <nav>
+                <div class="menu flex">
+                    <h1><a href="">logo</a></h1>
+                    <ul class="gnb flex">
+                        <li><a href="">SHOP</a></li>
+                        <li><a href="">EVENT</a></li>
+                        <li><a href="">ARCHIVE</a></li>
+                        <li><a href="">SPONSORSHIP</a></li>
+                        <li><a href="">ONE SPEC</a></li>
+                    </ul>
+                    <div class="buy">
+                        <ul class="customer flex">
+                            <li><a class="search" href="">search</a></li>
+                            <li><a class="cart" href="">cart</a></li>
+                            <li><a href="">LOGIN</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 아코디언 메뉴 리스트 -->
+                <div class="wgnb">
+                    <div class="wsub flex">
+                        <ul>
+                            <li class=strong><a href="#">SHOES</a></li>
+                            <li><a href="">러닝화</a></li>
+                            <li><a href="">워킹화</a></li>
+                            <li><a href="">스포츠화</a></li>
+                            <li><a href="">트레킹화</a></li>
+                            <li><a href="">스니커즈</a></li>
+                            <li><a href="">샌들/슬리퍼</a></li>
+                            <li><a href="">기타</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="#">MEN</a></li>
+                            <li><a href="">티셔츠</a></li>
+                            <li><a href="">스웻셔츠 & 후디</a></li>
+                            <li><a href="">아우터</a></li>
+                            <li><a href="">팬츠 & 타이즈</a></li>
+                            <li><a href="">숏팬츠</a></li>
+                            <li><a href="">트레이닝 상/하</a></li>
+                            <li><a href="">기타</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="#">WOMEN</a></li>
+                            <li><a href="">티셔츠</a></li>
+                            <li><a href="">스웻셔츠 & 후디</a></li>
+                            <li><a href="">아우터</a></li>
+                            <li><a href="">스포츠 브라</a></li>
+                            <li><a href="">팬츠 & 레깅스</a></li>
+                            <li><a href="">숏팬츠 & 스커트</a></li>
+                            <li><a href="">트레이닝 상/하</a></li>
+                            <li><a href="">기타</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="#">LIFTSTYLE</a></li>
+                            <li class="bold"><a href="">신발</a></li>
+                            <li><a href="">스니커즈</a></li>
+                            <li><a href="">샌들/슬라이드</a></li>
+                            <li><br></li>
+                            <li class="bold"><a href="">의류</a></li>
+                            <li><a href="">티셔츠</a></li>
+                            <li><a href="">스웻셔츠 & 후디</a></li>
+                            <li><a href="">아우터</a></li>
+                            <li><a href="">팬츠 & 레깅스</a></li>
+                            <li><a href="">숏팬츠 & 스커트</a></li>
+                            <li><a href="">트레이닝 상/하</a></li>
+                            <li><a href="">기타</a></li>
+                            <li><br></li>
+                            <li class="bold"><a href="">용품</a></li>
+                            <li><a href="">가방</a></li>
+                            <li><a href="">모자 & 헤어밴드</a></li>
+                            <li><a href="">양말</a></li>
+                            <li><a href="">기타</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="#">BAG/ACC</a></li>
+                            <li><a href="">가방</a></li>
+                            <li><a href="">모자 & 헤어밴드</a></li>
+                            <li><a href="">양말</a></li>
+                            <li><a href="">장갑 & 암가드</a></li>
+                            <li><a href="">홈트레이닝</a></li>
+                            <li><a href="">라켓스포츠</a></li>
+                            <li><a href="">기타</a></li>
+                            
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="#">KIDS</a></li>
+                            <li class="bold"><a href="">신발</a></li>
+                            <li class="bold"><a href="">의류</a></li>
+                            <li class="bold"><a href="">용품</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="#">SALE</a></li>
+                            <li class="bold"><a href="">신발</a></li>
+                            <li class="bold"><a href="">남성의류</a></li>
+                            <li class="bold"><a href="">여성의류</a></li>
+                            <li class="bold"><a href="">용품</a></li>
+                        </ul>
+                        <ul class="imgmenu">
+                            <li class=strong><a href="#">BEST 50</a></li>
+                            <li><a href=""><img src="img/wgnb_1.jpg" alt=""></a><span>best50 이미지</span></li>
+                        </ul>
+                        <ul class="imgmenu">
+                            <li class=strong><a href="#">GIFT CARD</a></li>
+                            <li><a href=""><img src="img/wgnb_2.jpg" alt=""></a><span>gift card 이미지</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wgnb">
+                    <div class="wsub flex">
+                        <ul>
+                            <li class=strong><a href="">LOOKBOOK</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="">NEWS</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="">ISSUE</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wgnb">
+                    <div class="wsub flex">
+                        <ul>
+                            <li class=strong><a href="">프로스포츠</a></li>
+                            <li><a href="">LG트윈스</a></li>
+                            <li><a href="">FC서울</a></li>
+                            <li><a href="">GS칼텍스</a></li>
+                            <li><a href="">LG세이커스</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="">익스트림 스포츠</a></li>
+                            <li><a href="">CAMEL RACE</a></li>
+                            <li><a href="">유소년 BMX</a></li>
+                        </ul>
+                        <ul>
+                            <li class=strong><a href="">국가대표</a></li>
+                            <li><a href="">야구 국가대표</a></li>
+                            <li><a href="">럭비 국가대표</a></li>
+                            <li><a href="">레슬링 국가대표</a></li>
+                            <li><a href="">싸이클 국가대표</a></li>
+                            <li><a href="">루지 국가대표</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 타이틀영역 -->
+    <section id="title">
+        <div class="wrap">
+            <h2>프로스펙스 배너 이미지</h2>
+            <div class="banner">
+                <ul class="titlebox title_slick">
+                    <li class="new1">
+                        <a href="#">
+                            <img src="img/title_1.png" alt="러닝 이미지">
+                            <div class="textbold">
+                                <h3>Unleash Your Speed<span class="block">에너젯 플러스 V2</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="new2">
+                        <a href="#">
+                            <img src="img/title_2.png" alt="야구 국가대표 이미지">
+                            <div class="textbold">
+                                <h3>야구 국가대표<span class="block">유니폼</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="new3">
+                        <a href="#">
+                            <img src="img/title_3.png" alt="농구 국가대표 이미지">
+                            <div class="textbold">
+                                <h3>농구 국가대표<span class="block">유니폼</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="new4">
+                        <a href="#">
+                            <img src="img/title_4.png" alt="발 착화 이미지">
+                        </a>
+                    </li>
+                    <li class="new5">
+                        <a href="#">
+                            <video playsinline="" autoplay="" muted="" loop="">
+                                <source src="img/title_5.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                    </li>
+                    <li class="new6">
+                        <a href="#">
+                            <img src="img/title_6.png" alt="스로스펙스 화보 이미지">
+                            <div class="textbold">
+                                <h3>23 FALL COLLECTION<span class="block">THE LAYERS FOR ALL MOVES</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="new7">
+                        <a href="#">
+                            <img src="img/title_8.png" alt="프로스펙스 브랜드북">
+                        </a>
+                    </li>
+                </ul>
+                <div class="sliderbox">
+                    <div class="slider">
+                        <button class="prev-btn">이전</button>
+                        <button class="next-btn">다음</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 내용영역 -->
+    <main>
+        <section id="main_1">
+            <div class="wrap flex padding50">
+                <div class="pack_1">
+                    <a href="">
+                        <img src="img/main_1.jpg" alt="">
+                        <div class="txtbox">
+                            <h3>23 FALL COLLECTION</h3>
+                            <p>THE LAYERS FOR ALL MOVES</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="pack_2">
+                    <a href="">
+                        <img src="img/main_2.jpg" alt="">
+                        <div class="txtbox">
+                            <h3>23 FALL COLLECTION</h3>
+                            <p>THE LAYERS FOR ALL MOVES</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="main_2">
+            <div class="wrap padding50">
+                <div class="mainbanner">
+                    <ul class="list main2_slick">
+                        <li class="li_1">
+                            <a href="">
+                                <img src="img/main2_1.jpg" alt="">
+                                <div class="txt_1">
+                                    <h3>PRO-SPECS<span class="block">PERFORMANCE</span></h3>
+                                </div>
+                                <div class="txt_2">
+                                    <span>23FW NEW ARRIVAL</span>
+                                    <div class="block"></div>
+                                    <span class="bold">에너젯 플러스 V2</span>
+                                </div>
+                            </a>
+                            <div class="sliderbox_2">
+                                <div class="slider">
+                                    <button class="prev-btn2">이전</button>
+                                    <button class="next-btn2">다음</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="li_2">
+                            <a href="">
+                                <img src="img/main2_2.jpg" alt="">
+                                <div class="txt_1">
+                                    <h3>PRO-SPECS<span class="block">PERFORMANCE</span></h3>
+                                </div>
+                                <div class="txt_2">
+                                    <span>23FW NEW ARRIVAL</span>
+                                    <div class="block"></div>
+                                    <span>블레이드 BX 3</span>
+                                </div>
+                            </a>
+                            <div class="sliderbox_2">
+                                <div class="slider">
+                                    <button class="prev-btn2">이전</button>
+                                    <button class="next-btn2">다음</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="li_3">
+                            <a href="">
+                                <img src="img/main2_3.jpg" alt="">
+                                <div class="txt_1">
+                                    <h3>PRO-SPECS<span class="block">PERFORMANCE</span></h3>
+                                </div>
+                                <div class="txt_2">
+                                    <span>23FW NEW ARRIVAL</span>
+                                    <div class="block"></div>
+                                    <span>클러스터 3</span>
+                                </div>
+                            </a>
+                            <div class="sliderbox_2">
+                                <div class="slider">
+                                    <button class="prev-btn2">이전</button>
+                                    <button class="next-btn2">다음</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="li_4">
+                            <a href="">
+                                <img src="img/main2_4.jpg" alt="">
+                                <div class="txt_1">
+                                    <h3>PRO-SPECS<span class="block">PERFORMANCE</span></h3>
+                                </div>
+                                <div class="txt_2">
+                                    <span>23FW NEW ARRIVAL</span>
+                                    <div class="block"></div>
+                                    <span>액시스 온</span>
+                                </div>
+                            </a>
+                            <div class="sliderbox_2">
+                                <div class="slider">
+                                    <button class="prev-btn2">이전</button>
+                                    <button class="next-btn2">다음</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="li_5">
+                            <a href="">
+                                <img src="img/main2_5.jpg" alt="">
+                                <div class="txt_1">
+                                    <h3>PRO-SPECS<span class="block">PERFORMANCE</span></h3>
+                                </div>
+                                <div class="txt_2">
+                                    <span>23FW NEW ARRIVAL</span>
+                                    <div class="block"></div>
+                                    <span>블레이드 BX 3</span>
+                                </div>
+                            </a>
+                            <div class="sliderbox_2">
+                                <div class="slider">
+                                    <button class="prev-btn2">이전</button>
+                                    <button class="next-btn2">다음</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="main_3">
+            <div class="wrap padding100">
+                <h2>프로스펙스 상품 리스트</h2>
+                <ul class="flex">
+                    <li><a href="">#에너젯</a></li>
+                    <li><a href="">#LG트윈스</a></li>
+                    <li><a href="">#야구 국가대표</a></li>
+                    <li><a href="">#워킹화</a></li>
+                </ul>
+                <div class="product">
+                    <div class="pro-1 flex main3_slick">
+                        <article>
+                            <a href="">
+                                <img src="img/pro-1-1.jpg" alt="에너젯 플러스 V2">
+                                <span class="new">[신제품]</span>
+                                <h3>에너젯 플러스 V2</h3>
+                                <p class="price">169,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-1-2.jpg" alt="에너젯 플러스 V2">
+                                <span class="new">[신제품]</span>
+                                <h3>에너젯 플러스 V2</h3>
+                                <p class="price">169,000원</p>
+                                <span class="sex">
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-1-3.jpg" alt="에너젯 플러스 V2">
+                                <span class="new">[신제품]</span>
+                                <h3>에너젯 플러스 V2 </h3>
+                                <p class="price">169,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-1-4.jpg" alt="에너젯 4">
+                                <span class="new">[신제품]</span>
+                                <h3>에너젯 4</h3>
+                                <p class="price">129,000원</p>
+                                <span class="sex">
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-1-5.jpg" alt="에너젯 4">
+                                <span class="new">[신제품]</span>
+                                <h3>에너젯 4</h3>
+                                <p class="price">129,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-1-6.jpg" alt="에너젯 4">
+                                <span class="new">[신제품]</span>
+                                <h3>에너젯 4</h3>
+                                <p class="price">129,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="pro-2 flex main3_slick">
+                        <article>
+                            <a href="">
+                                <img src="img/pro-2-1.jpg" alt="2023 LG트윈스 어센틱 유광점퍼">
+                                <h3>2023 LG트윈스 어센틱 유광점퍼</h3>
+                                <p class="price">249,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-2-2.jpg" alt="2023 LG트윈스 어센틱 후드 티셔츠">
+                                <h3>2023 LG트윈스 어센틱 후드 티셔츠</h3>
+                                <p class="price">119,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-2-3.jpg" alt="2023 LG트윈스 어센틱 홈 유니폼">
+                                <h3>2023 LG트윈스 어센틱 홈 유니폼</h3>
+                                <p class="price">139,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-2-4.jpg" alt="2023 LG트윈스 어센틱 원정 유니폼">
+                                <h3>2023 LG트윈스 어센틱 원정 유니폼</h3>
+                                <p class="price">139,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-2-5.jpg" alt="2023 LG트윈스 어센틱 서울 유니폼">
+                                <h3>2023 LG트윈스 어센틱 서울 유니폼</h3>
+                                <p class="price">139,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-2-6.jpg" alt="2023 LG트윈스 밀리터리 유니폼">
+                                <h3>2023 LG트윈스 밀리터리 유니폼</h3>
+                                <p class="price">149,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="pro-3 flex main3_slick">
+                        <article>
+                            <a href="">
+                                <img src="img/pro-3-1.jpg" alt="야구 국가대표팀 후드티셔츠">
+                                <h3>야구 국가대표팀 후드티셔츠</h3>
+                                <p class="price">119,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-3-2.jpg" alt="야구 국가대표팀 점퍼">
+                                <h3>야구 국가대표팀 점퍼</h3>
+                                <p class="price">249,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-3-3.jpg" alt="(노마킹 제품) 야구 국가대표 유니폼 상의 (홈)">
+                                <h3>(노마킹 제품) 야구 국가대표 유니폼 상의 (홈)</h3>
+                                <p class="price">149,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-3-4.jpg" alt="(노마킹 제품) 야구 국가대표 유니폼 상의 (원정)">
+                                <h3>(노마킹 제품) 야구 국가대표 유니폼 상의 (원정)</h3>
+                                <p class="price">149,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-3-5.jpg" alt="야구 국가대표팀 반팔 바람막이">
+                                <h3>야구 국가대표팀 반팔 바람막이</h3>
+                                <p class="price">135,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-3-6.jpg" alt="야구 국가대표팀 모자">
+                                <h3>야구 국가대표팀 모자</h3>
+                                <p class="price">39,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                    </div>
+                    <div class="pro-4 flex main3_slick">
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-1.jpg" alt="블레이드 BX 3">
+                                <span class="new">[신제품]</span>
+                                <h3>블레이드 BX 3</h3>
+                                <p class="price">199,000원</p>
+                                <span class="sex">
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-2.jpg" alt="블레이드 BX 3">
+                                <span class="new">[신제품]</span>
+                                <h3>블레이드 BX 3</h3>
+                                <p class="price">199,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-3.jpg" alt="블레이드 BX 3">
+                                <span class="new">[신제품]</span>
+                                <h3>블레이드 BX 3</h3>
+                                <p class="price">199,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-4.jpg" alt="블레이드 4">
+                                <span class="new">[신제품]</span>
+                                <h3>블레이드 4</h3>
+                                <p class="price">159,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-5.jpg" alt="클러스터 3">
+                                <span class="new">[신제품]</span>
+                                <h3>클러스터 3</h3>
+                                <p class="price">139,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-6.jpg" alt="클러스터 3">
+                                <span class="new">[신제품]</span>
+                                <h3>클러스터 3</h3>
+                                <p class="price">139,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                </span>
+                            </a>
+                        </article>
+                        <article>
+                            <a href="">
+                                <img src="img/pro-4-7.jpg" alt="액시스 온">
+                                <h3>액시스 온</h3>
+                                <p class="price">129,000원</p>
+                                <span class="sex">
+                                    <span class="male">남</span>
+                                    <span class="female">여</span>
+                                </span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="main_4">
+            <div class="wrap">
+                <h2>About pro specs</h2>
+                <a class="mainimg" href=""><img src="img/main4_1.jpg" alt="PRO-SPECS BRAND BOOK"></a>
+                <div class="imgtxt flex">
+                    <div class="txtbox">
+                        <a href="">
+                            <h3>OUR RACE IS NOT OVER <br> 우리의 레이스는 끝나지 않았다</h3>
+                            <p>
+                                프로-스펙스는 전문 스포츠, 그리고 지금 시대에 불려지는<br>
+                                생활 스포츠 등 프로-스펙스가 해석하고 바라보는 '스포츠'라는 단어의<br>
+                                의미에 근간을 두고 앞으로의 활동을 전개하려 합니다.
+                            </p>
+                        </a>
+                    </div>
+                    <ul class="imgbox flex">
+                        <li><a href=""><img src="img/main4_2.jpg" alt="프로-스펙스 «우리의 레이스는 끝나지 않았다»"></a></li>
+                        <li><a href=""><img src="img/main4_3.jpg" alt="프로-스펙스 «우리의 레이스는 끝나지 않았다»"></a></li>
+                        <li><a href=""><img src="img/main4_4.jpg" alt="프로-스펙스 «우리의 레이스는 끝나지 않았다»"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="main_5">
+            <div class="wrap">
+                <h2>프로스펙스 스포츠 기사</h2>
+                <div class="donebox flex">
+                    <div class="donationbox-1">
+                        <a href="">
+                            <img src="img/main5_1.jpg" alt="대한민국농구협회 국가대표 용품">
+                            <article>
+                                <h3>프로-스펙스, 대한민국농구협회 국가대표 용품 후원</h3>
+                                <h4>대한민국농구협회가 국내 스포츠 브랜드 프로-스펙스와 국가대표 용품 후원 계약을 체결했다. 이번 협약으로 농구협회는 2026년까지 프로-스펙스로부터 공식 유니폼, 훈련복을 포함해 경기력 향상을 위한 의류, 용품 등을 지원받으며 오는 9월 열리는 항저우 아시안게임을 시작으로 모든 연령별 국제대회에 프로-스펙스 유니폼을 착용한다.</h4>
+                            </article>
+                        </a>
+                    </div>
+                    <div class="donationbox-2">
+                        <a href="">
+                            <img src="img/main5_2.jpg" alt="춘천마라톤·서울하프마라톤">
+                            <article>
+                                <h3>프로-스펙스, 춘천마라톤·서울하프마라톤 공식 후원</h3>
+                                <h4>LS네트웍스의 스포츠 브랜드 프로-스펙스가 조선일보 주최 춘천마라톤과 서울하프마라톤을 3년간 공식 후원한다. LS네트웍스는 2023년부터 2025년까지 춘천마라톤(10월 개최), 2024년부터 2026년까지 서울하프마라톤(4월 개최)에 참가자·자원봉사자 기념 티셔츠, 진행 요원 의류 등을 지원한다.</h4>
+                            </article>
+                        </a>
+                    </div>
+                </div>
+                <ul class="quickmenu padding100">
+                    <li class="menu-1">
+                        <img src="img/icon_quick_01.svg" alt="LOOKBOOK">
+                        <a href="">LOOKBOOK</a>
+                        <p>시즌 룩북을 만나보세요.</p>
+                    </li>
+                    <li class="menu-2">
+                        <img src="img/icon_quick_02.svg" alt="STORE">
+                        <a href="">STORE</a>
+                        <p>가장 가까운 프로-스펙스 매장을 검색해보세요.</p>
+                    </li>
+                    <li class="menu-3">
+                        <img src="img/icon_quick_03.svg" alt="GIFT CARD">
+                        <a href="">GIFT CARD</a>
+                        <p>소중한 분께 LS네트웍스 모바일상품권을
+                            선물해 보세요.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- 하단영역 -->
+    <footer>
+        <div class="wrap flex padding50">
+            <div class="first">
+                <a href=""><img class="logo" src="img/footer_logo.svg" alt="브랜드 로고"></a>
+                <p class="address">(주)LS네트웍스<br>
+                    대표이사 : 문성준 | 사업자등록번호 : 622-81-04805 <br>
+                    통신판매업 신고번호 : 2016-경남김해-0229<br>
+                    경상남도 김해시 호계로 428, 1층(부원동) <a href="">사업자정보확인</a><br>
+                    개인정보관리 책임자 : 예재승<br>
+                    마케팅/제휴 문의 : prospecs.brand@gmail.com</p>
+                <div class="bottom">
+                    <span>SGI서울보증안내</span>
+                    <p class="notice">
+                        고객님께서 안전거래를 위해 현금 등으로 결제하신 경우, <br>
+                        저희 쇼핑몰에서 가입한 소비자피해보상보험 서비스를 이용하실 수 있습니다. <a href="">서비스 가입 사실 확인</a></p>
+                    <p class="copyright">프로스펙스닷컴 | COPYRIGHT© LS NETWORKS CO. ALL RIGHTS RESERVED</p>
+                </div>
+            </div>
+            <div class="second flex">
+                <ul>
+                    <li><a href="">개인정보처리방침</a></li>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">A/S 안내</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">앱다운로드</a></li>
+                </ul>
+                <div class="contact">
+                    <div class="sns">
+                        <a href=""><img src="img/icon_facebook.svg" alt="페이스북"></a>
+                        <a href=""><img src="img/icon_youtube.svg" alt="유튜브"></a>
+                        <a href=""><img src="img/icon_insta.svg" alt="인스타그램"></a>
+                    </div>
+                    <div class="info">
+                        <h3>CONTACT US</h3>
+                        <p>구매 / 배송 문의</p>
+                        <span>080-710-1020</span>
+                        <p>상품정보 / AS문의</p>
+                        <span>080-023-1020</span>
+                        <p class="time">MON - FRI 09 : 00 - 18:00 <br>
+                            주말, 공휴일 휴무<br>
+                            BREAK TIME : 12:30 - 13:30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="bottom-top" href="">맨위로가기</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,164 @@
+#main_3 {
+
+}
+#main_3 .wrap {
+  max-width: 1760px;
+  /*! overflow: hidden; */
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+#main_3 .wrap h2{
+  visibility: hidden;
+}
+#main_3 .wrap ul {
+  gap: 25px;
+  padding-bottom: 50px;
+}
+#main_3 .wrap ul li {
+
+}
+#main_3 .wrap ul li a {
+  font-size: 27px;
+  font-weight: 700;
+  color: grey;
+}
+#main_3 .wrap ul li a:hover{
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: #222;
+  text-decoration-thickness: 8px;
+  text-underline-offset: 20px;
+}
+#main_3 .wrap .product {
+
+}
+#main_3 .wrap .product div.pro-1 {
+
+}
+#main_3 .wrap .product div.pro-2 {
+
+}
+#main_3 .wrap .product div.pro-3 {
+
+}
+#main_3 .wrap .product div.pro-4 {
+
+}
+#main_3 .wrap .product div {
+  gap: 20px;
+  display: flex;
+}
+#main_3 .wrap .product div article {
+
+}
+#main_3 .wrap .product div article a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.5;
+}
+#main_3 .wrap .product div article a img{
+  width: 320px;
+  height: 320px;
+}
+#main_3 .wrap .product div article a span.new {
+  font-size: 18px;
+  font-weight: 800;
+  padding-top: 15px;
+}
+#main_3 .wrap .product div article a h3 {
+  font-size: 20px;
+  font-weight: 500;
+}
+#main_3 .wrap .product div article a h3.add {
+  padding-top: 36px;
+}
+#main_3 .wrap .product div article a p.price {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: Poppins;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#main_3 .wrap .product div article a .pricebox{
+  font-family: Poppins;
+  padding-top: 5px;
+  display: block;
+}
+#main_3 .wrap .product div article a .pricebox span.originprice{
+  color: #BABABA;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: line-through;
+  line-height: 0;
+}
+#main_3 .wrap .product div article a .pricebox .amount{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  line-height: 0;
+  padding-bottom: 9px;
+}
+#main_3 .wrap .product div article a .pricebox .amount span.discount{
+  color: #ff0052;
+  font-weight: 700;
+  font-size: 20px;
+  transform: translateY(4px);
+  padding-right: 6px;
+}
+#main_3 .wrap .product div article a .pricebox .amount p.price{
+  font-size: 22px;
+  font-weight: 800;
+}
+#main_3 .wrap .product div article a span.sex {
+  gap: 0;
+  display: flex;
+}
+#main_3 .wrap .product div article a span.sex span.male {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 21px;
+}
+#main_3 .wrap .product div article a span.sex span.female {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: #FF0052;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 21px;
+}
+#main_3 .wrap .product div .slick-prev{
+  z-index: 1;
+  left: -10px;
+  top: 36%;
+}
+#main_3 .wrap .product div .slick-next{
+  z-index: 1;
+  right: 10px;
+  top: 36%;
+}
+#main_3 .wrap .product div button.slick-prev::before{
+  content: "";
+  background-image: url(../img/arrow_back.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+#main_3 .wrap .product div button.slick-next::before{
+  content: "";
+  background-image: url(../img/arrow_forward.svg);
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
