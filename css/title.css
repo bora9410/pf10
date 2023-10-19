@@ -35,6 +35,9 @@
 #title .wrap .banner ul.titlebox li a video source {
 
 }
+#title .wrap .banner ul.titlebox li.new5 span{
+  visibility: hidden;
+}
 #title .wrap .banner ul.titlebox li a .textbold {
   position: absolute;
   bottom: calc(100% / 3);
