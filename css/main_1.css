@@ -13,6 +13,7 @@
 #main_1 .wrap .pack_1 img {
   width: 100%;
   height: 100%;
+  filter: brightness(0.7);
 }
 #main_1 .wrap div .txtbox {
   position: absolute;
@@ -38,6 +39,7 @@
 #main_1 .wrap .pack_2 img {
   width: 100%;
   height: 100%;
+  filter: brightness(0.7);
 }
 #main_1 .wrap .pack_2 .txtbox h3 {
 

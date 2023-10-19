@@ -29,17 +29,17 @@ footer .wrap .first .bottom {
   line-height: 1.5;
 }
 footer .wrap .first .bottom span {
-  color: gray;
+  color: #eee;
   font-weight: 700;
   line-height: 2;
 }
 footer .wrap .first .bottom p.notice {
-  color: grey;
+  color: #eee;
   font-weight: 600;
   padding-bottom: 20px;
 }
 footer .wrap .first .bottom p.notice a {
-  color: gray;
+  color: #eee;
   text-decoration: underline;
 }
 footer .wrap .first .bottom p.copyright {
@@ -86,7 +86,7 @@ footer .wrap .second .contact .info h3 {
 }
 footer .wrap .second .contact .info p {
   font-size: 14px;
-  color: #757575;
+  color: #eee;
   padding-top: 5px;
 }
 footer .wrap .second .contact .info span {
