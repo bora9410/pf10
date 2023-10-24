@@ -3,9 +3,8 @@
 }
 #main_3 .wrap {
   max-width: 1760px;
-  /*! overflow: hidden; */
-  padding-top: 150px;
-  padding-bottom: 150px;
+  overflow: hidden;
+  padding: 150px 15px;
 }
 #main_3 .wrap h2{
   visibility: hidden;
