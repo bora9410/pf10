@@ -145,7 +145,6 @@ header .wrap nav .wgnb .wsub ul li a:hover{
   color: #ff0052;
 }
 header .wrap nav .wgnb .wsub ul li span{
-  visibility: hidden;
 }
 header .wrap nav .wgnb .wsub ul li.bold{
 
@@ -156,7 +155,4 @@ header .wrap nav .wgnb .wsub ul li.bold a{
 header .wrap nav .wgnb .wsub ul li a img{
   width: 260px;
   height: auto;
-}
-header .wrap nav .wgnb .wsub ul li a span{
-  visibility: hidden;
 }
